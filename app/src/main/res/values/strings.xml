@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OCR Optical Character Recognition</string>
+    <string name="star_reading">Star Reading</string>
+    <item name="textView" type="id" />
+</resources>
