@@ -7,5 +7,7 @@
     <string name="wellcome">Wellcome!</string>
     <string name="save_to_file">Save to File</string>
     <string name="clear">Clear</string>
+    <string name="start_reading">Start Reading</string>
+    <string name="wellcome_when_ready_press_start_reading_button">Wellcome! when ready press Start reading button</string>
     <item name="textView" type="id" />
 </resources>
