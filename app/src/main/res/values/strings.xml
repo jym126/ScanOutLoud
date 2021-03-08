@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">OCR Optical Character Recognition</string>
     <string name="star_reading">Star Reading</string>
+    <string name="read_file">Read file</string>
+    <string name="write_to_file">Read Again</string>
+    <string name="save">Save</string>
+    <string name="wellcome">Wellcome!</string>
+    <string name="save_to_file">Save to File</string>
+    <string name="clear">Clear</string>
     <item name="textView" type="id" />
 </resources>
