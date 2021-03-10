@@ -40,11 +40,9 @@ public class MainActivity extends AppCompatActivity {
     private SurfaceView surfaceView;
 
     private CameraSource cameraSource;
-    private TextRecognizer textRecognizer;
 
     private TextToSpeech textToSpeech;
     private String stringResult = null;
-    private int requestPermissionID;
 
     Button saveButton, readFile, clearButton;
     String myData = "";
@@ -55,14 +53,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActivityCompat.requestPermissions(this, new String[]{CAMERA}, PackageManager.PERMISSION_GRANTED);
-        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-            }
+        textToSpeech = new TextToSpeech(this, status -> {
         });
 
 
     }
+
+    //Verifying external storage//
     private static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
@@ -78,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+    
+    //to change the layout portrait/landscape according to orientation
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -97,8 +96,9 @@ public class MainActivity extends AppCompatActivity {
         cameraSource.release();
     }
 
+    //Scanning processs//
     private void textRecognizer() {
-        textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+        TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
                 .setRequestedPreviewSize(1280, 1024)
                 .setFacing(CameraSource.CAMERA_FACING_BACK)
@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     if (ActivityCompat.checkSelfPermission(getApplicationContext(),
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 
+                        int requestPermissionID = 0;
                         ActivityCompat.requestPermissions(MainActivity.this,
                                 new String[]{Manifest.permission.CAMERA},
                                 requestPermissionID);
@@ -169,7 +170,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-/* Aplication Buttons */
+                                         // Aplication Buttons //
+    //Read again button//
     private void resultObtained() {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
@@ -182,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         String text = textView.getText().toString();
 
-                                  /* save file buttons */
+        // save file buttons //
 
         saveButton.setOnClickListener(v -> {
             try {
@@ -197,7 +199,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Data saved",Toast.LENGTH_LONG).show();
 
         });
-                                 /*read file Button */
+
+        //read file Button //
         readFile.setOnClickListener(v -> {
             try {
                 FileInputStream fis = new FileInputStream(myExternalFile);
@@ -225,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             myExternalFile = new File(getExternalFilesDir(filepath), filename);
         }
     }
-                      /* Start Button */
+    //Start Button //
     public void buttonStart(View view) {
         setContentView(R.layout.surfaceview);
         textRecognizer();
