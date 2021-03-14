@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00948DFA"
+    android:background="#6A948DFA"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="com.scanoutloud.MainActivity">
@@ -23,8 +23,8 @@
         android:id="@+id/buttonStart"
         android:layout_width="189dp"
         android:layout_height="164dp"
-        android:layout_marginTop="-40dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="-40dp"
         android:background="@drawable/orange_button"
         android:backgroundTint="#00FFFFFF"
         android:foreground="@drawable/orange_button"
