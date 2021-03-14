@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,65 +14,66 @@
         android:layout_height="175dp"
         android:layout_marginStart="204dp"
         android:layout_marginTop="16dp"
-        android:background="#F8F2F2"
+        android:background="#EAE4F4"
+        android:gravity="center"
+        android:orientation="vertical"
         android:text="@string/wellcome_when_ready_press_start_reading_button"
-        android:textAlignment="center"
         android:textColor="#090909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
         android:id="@+id/buttonStart"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="124dp"
+        android:layout_width="189dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="-470dp"
+        android:background="@drawable/orange_button"
+        android:backgroundTint="#00FFFFFF"
+        android:foreground="@drawable/orange_button"
         android:onClick="buttonStart"
-        android:text="@string/start_reading"
-        app:icon="@drawable/ic_action_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/start_reading" />
 
     <Button
         android:id="@+id/readFileButton"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="222dp"
-        android:text="@string/read_file"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_width="187dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="-180dp"
+        android:layout_marginTop="180dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/read_file"
+        android:text="@string/read_file" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="272dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="204dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/read_again"
         android:onClick="buttonReadAgain"
-        android:text="@string/write_to_file"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:text="@string/write_to_file" />
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="216dp"
-        android:text="@string/save_to_file"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="198dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="180dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/save_to_file"
+        android:text="@string/save_to_file" />
 
     <Button
         android:id="@+id/clearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="152dp"
+        android:layout_width="156dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="-190dp"
+        android:layout_marginTop="50dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/clear"
         android:onClick="clearButton"
-        android:text="@string/clear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="@string/clear" />
+</LinearLayout>
