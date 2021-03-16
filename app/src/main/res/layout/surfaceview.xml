@@ -8,10 +8,10 @@
 
     <SurfaceView
         android:id="@+id/surfaceView"
-        android:layout_width="308dp"
-        android:layout_height="503dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="300dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
