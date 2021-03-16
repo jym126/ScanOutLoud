@@ -34,6 +34,13 @@ import java.io.InputStreamReader;
 
 import static android.Manifest.permission.CAMERA;
 
+/**
+ * @author : Jose Martinez, Miguel Martinez, Yaswell de la Rosa
+ * @version 1.0
+ * ScanOutLout is an application to scan documents and read them
+ * using Text to Speech API and you can save the read information
+ * on mobile storage.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -59,24 +66,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Verifying external storage//
+    /**Verifying external storage
+     * @return false
+     * */
     private static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState);
     }
 
     private static boolean isExternalStorageAvailable() {
         String extStorageState = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(extStorageState)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(extStorageState);
     }
-    
-    //to change the layout portrait/landscape according to orientation
+
+    /**to change the layout portrait/landscape according to orientation
+     *
+     * @param newConfig settings for change layout
+     * according to mobile orientation
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -96,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
         cameraSource.release();
     }
 
-    //Scanning processs//
+    /**Scanning processs
+     *
+     */
     private void textRecognizer() {
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
@@ -170,8 +179,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-                                         // Aplication Buttons //
-    //Read again button//
+
+    /**Aplication Buttons
+     * Read again button
+     *
+     */
     private void resultObtained() {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
@@ -184,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         String text = textView.getText().toString();
 
-        // save file buttons //
+        //save file buttons//
 
         saveButton.setOnClickListener(v -> {
             try {
@@ -200,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        //read file Button //
+        // read file Button //
         readFile.setOnClickListener(v -> {
             try {
                 FileInputStream fis = new FileInputStream(myExternalFile);
@@ -228,7 +240,11 @@ public class MainActivity extends AppCompatActivity {
             myExternalFile = new File(getExternalFilesDir(filepath), filename);
         }
     }
-    //Start Button //
+
+    /**Start Button
+     *
+     * @param view functions for buttons to start
+     */
     public void buttonStart(View view) {
         setContentView(R.layout.surfaceview);
         textRecognizer();
