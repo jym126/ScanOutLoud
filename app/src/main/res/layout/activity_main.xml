@@ -13,7 +13,7 @@
         android:layout_width="300dp"
         android:layout_height="175dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="-100dp"
         android:background="#EAE4F4"
         android:text="@string/wellcome_when_ready_press_start_reading_button"
         android:textAlignment="center"
@@ -33,10 +33,10 @@
 
     <Button
         android:id="@+id/readFileButton"
-        android:layout_width="187dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="-60dp"
+        android:layout_width="196dp"
+        android:layout_height="167dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="-30dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/read_file"
         android:text="@string/read_file" />
@@ -45,8 +45,8 @@
         android:id="@+id/button2"
         android:layout_width="204dp"
         android:layout_height="141dp"
-        android:layout_marginStart="-100dp"
-        android:layout_marginTop="-60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-80dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/read_again"
         android:onClick="buttonReadAgain"
@@ -54,10 +54,10 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="198dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="-140dp"
+        android:layout_width="202dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginTop="-230dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/save_to_file"
         android:text="@string/save_to_file" />
@@ -67,7 +67,7 @@
         android:layout_width="156dp"
         android:layout_height="142dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="-60dp"
+        android:layout_marginTop="-230dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/clear"
         android:onClick="clearButton"
