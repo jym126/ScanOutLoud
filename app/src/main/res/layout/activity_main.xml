@@ -36,7 +36,7 @@
         android:layout_width="196dp"
         android:layout_height="167dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="-10dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/read_file"
         android:text="@string/read_file" />
@@ -66,7 +66,7 @@
         android:id="@+id/clearButton"
         android:layout_width="156dp"
         android:layout_height="142dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="-230dp"
         android:background="#00FFFFFF"
         android:foreground="@drawable/clear"
